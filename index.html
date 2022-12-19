@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div id="app">
         <!-- Bottoni play e pausa -->
         <div class="buttons">
@@ -38,8 +37,8 @@
                     <div class="prev" @click="prev"></div>
                     <div class="next" @click="next"></div>
                     <div class="thumb" v-for="(element, index) in slides" :class="(index === activeImage) ? 'active' : '' ">
-                            <!-- Click sulle thumbs -->
-                            <img :src="element.image" alt="thumbnail" @click="changeImage(index)"/>
+                        <!-- Click sulle thumbs -->
+                        <img :src="element.image" alt="thumbnail" @click="changeImage(index)"/>
                     </div>
                 </div>
         </div>
