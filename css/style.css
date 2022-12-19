@@ -112,15 +112,20 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     justify-content: center;
 }
 
+.cont-all{
+    height: 100vh;
+    background: linear-gradient(#121212,#0a2744,#30475E);
+}
+
 .btn{
-    padding: 20px;
+    padding: 20px 50px;
     margin: 20px;
-    border:none;
+    border: none;
     border-radius: 50px;
 }
 
 .btn-play{
-    background-color: green;
+    background-color: rgb(3, 106, 190);
 }
 .btn-pause{
     background-color: yellow;
@@ -128,9 +133,11 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
 }
 
 .btn-play:hover{
-    background-color: rgb(0, 87, 0);
+    outline: 2px solid white;
+    background-color: rgb(1, 53, 95);
 }
 
 .btn-pause:hover{
+    outline: 2px solid white;
     background-color: rgb(145, 145, 1);
 }
