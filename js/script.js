@@ -9,7 +9,7 @@ createApp( {
             activeImage: 0,
             slides:[
                     {
-                    image: 'img/01.webp',
+                        image: 'img/01.webp',
                         title: 'Marvel\'s Spiderman Miles Morale',
                         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
                     }, 
@@ -47,6 +47,7 @@ createApp( {
         next()
         {
             this.activeImage++;
+            console.log(this.activeImage)
             if(this.activeImage > this.slides.length -1){
                 this.activeImage = 0;
             }

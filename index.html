@@ -13,43 +13,40 @@
 
 <body> 
     <div class="cont-all d-flex flex-column g-2">
-    
-    <div id="app">
-   
-        <!-- Container -->
-        <div class="container mt-2">
-                <div class="item">
-                    <!-- Effetto di mouse over e leave -->
-                    <div class="image" @mouseover="stopAutoplay" @mouseleave="startAutoplay">
-                    <!-- Immagini in slides -->
-                    <img :src="slides[activeImage].image" v-bind:alt="slides.title">
+        <div id="app">
+            <!-- Container -->
+            <div class="container mt-2">
+                    <div class="item">
+                        <!-- Effetto del mouse over e leave -->
+                        <div class="image" @mouseover="stopAutoplay" @mouseleave="startAutoplay">
+                        <!-- Immagini in slides -->
+                        <img :src="slides[activeImage].image" v-bind:alt="slides.title">
+                        </div>
+                        <!-- Titoli e testi sull'immagine -->
+                        <div class="text">
+                            <h2>{{slides[activeImage].title}} </h2>
+                            <p> {{slides[activeImage].text}}</p>
+                        </div>
                     </div>
-                    <!-- Titoli e testi sull'immagine -->
-                    <div class="text">
-                        <h2>{{slides[activeImage].title}} </h2>
-                        <p> {{slides[activeImage].text}}</p>
+                    <!-- Creo la thumbs -->
+                    <div class="thumbs" >
+                        <!-- Click sulle frecce -->
+                        <div class="prev" @click="prev"></div>
+                        <div class="next" @click="next"></div>
+                        <div class="thumb" v-for="(element, index) in slides" :class="(index === activeImage) ? 'active' : '' ">
+                            <!-- Click sulle thumbs -->
+                            <img :src="element.image" alt="thumbnail" @click="changeImage(index)"/>
+                        </div>
                     </div>
-                </div>
-                <!-- Creo la thumbs -->
-                <div class="thumbs" >
-                    <!-- Click sulle frecce -->
-                    <div class="prev" @click="prev"></div>
-                    <div class="next" @click="next"></div>
-                    <div class="thumb" v-for="(element, index) in slides" :class="(index === activeImage) ? 'active' : '' ">
-                        <!-- Click sulle thumbs -->
-                        <img :src="element.image" alt="thumbnail" @click="changeImage(index)"/>
+            </div>
+                    <!-- Bottoni play e pausa -->
+                    <div class="buttons">
+                        <button class="btn btn-play" @click="startAutoplay"><i class="fas fa-play"></i></button>
+                        <button class="btn btn-pause" @click="stopAutoplay"><i class="fas fa-pause"></i></button>
                     </div>
-                </div>
         </div>
-                 <!-- Bottoni play e pausa -->
-                 <div class="buttons">
-                    <button class="btn btn-play" @click="startAutoplay"><i class="fas fa-play"></i></button>
-                    <button class="btn btn-pause" @click="stopAutoplay"><i class="fas fa-pause"></i></button>
-                </div>
-
     </div>
-</div>
-<!-- script js -->
+    <!-- Script js -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/script.js"></script>
 </body>

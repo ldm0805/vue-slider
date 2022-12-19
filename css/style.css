@@ -38,6 +38,7 @@
 .thumbs {
     float: left;
     height: 300px;
+    width: 180px;
     background: #000;
     position: relative;
 }
