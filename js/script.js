@@ -63,7 +63,7 @@ createApp( {
         {
             this.autoplay = setInterval(() =>{
                 this.next()
-            },500)
+            },3000)
         },
         stopAutoplay()
         {
