@@ -36,18 +36,21 @@ createApp( {
                     ],
         }
     },
+    created(){
+        //L'autoplay si avvia all'apertura della pagina
+        this.startAutoplay();
+    },
 
     methods: {
-        // click sulle immagini
+        // Click sulle thumbs
         changeImage(currentIndex)
         {
             this.activeImage = currentIndex;
         },
-        // click sulle frecce
+        // Click sulle frecce
         next()
         {
             this.activeImage++;
-            console.log(this.activeImage)
             if(this.activeImage > this.slides.length -1){
                 this.activeImage = 0;
             }
